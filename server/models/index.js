@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const s = Sequelize;
+
 const db = new Sequelize("postgres://postgres:password@localhost:5432/todos", {
     logging: false,
 });
@@ -8,6 +8,7 @@ const User = db.define("user", {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
     },
     age: {
         type: Sequelize.INTEGER,
